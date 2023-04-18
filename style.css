@@ -1,0 +1,269 @@
+:root {
+  --background-color: rgb(220, 220, 220);
+  --color-shadow: rgb(36, 32, 32);
+  --bg-container-day: deepskyblue;
+  --bg-container-night: rgb(50, 53, 62);
+  --bg-container-cloudiness: rgb(100, 195, 229);
+  --color-variable-navigation: whitesmoke;
+  --color-paremetr-city: rgb(204, 221, 247);
+  --sun-color-first: rgb(247, 86, 32);
+  --sun-color-second: rgb(246, 246, 179);
+  --moon-color-light: rgb(231, 234, 251);
+  --moon-color-dark: rgb(0, 0, 0);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container-global {
+  flex-wrap: wrap;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2vw;
+  background-color: var(--background-color);
+}
+.container-global_color-day {
+  background-color: var(--bg-container-day);
+  box-shadow: 1vw -1vw 3vw -1vw var(--color-shadow);
+}
+.container-global_color-night {
+  background-color: var(--bg-container-night);
+  box-shadow: 1vw -1vw 2vw 0vw var(--color-shadow);
+}
+.container-global_color-cloudiness {
+  background-color: var(--bg-container-cloudiness);
+}
+.container-global__container-day, .container-global__container-night, .container-global__container-cloudiness {
+  margin-top: 2vw;
+  display: flex;
+  gap: 2vw;
+}
+.container-global_color-moon {
+  position: relative;
+  background-image: linear-gradient(45deg, var(--moon-color-light), var(--moon-color-dark));
+  box-shadow: 10px -10px 10px 0px var(--color-shadow);
+}
+.container-global_color-sun {
+  background-image: linear-gradient(45deg, var(--sun-color-first), var(--sun-color-second));
+  box-shadow: 0px 0px 15px 10px rgb(249, 215, 153);
+}
+.container-global__shine {
+  animation: shine;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+.container-day__big-section,
+.container-night__big-section,
+.container-cloudiness__big-section {
+  width: 22vw;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  border-radius: 1.5vw;
+}
+.container-day__small-section,
+.container-night__small-section,
+.container-cloudiness__small-section {
+  width: 22vw;
+  height: -moz-max-content;
+  height: max-content;
+  border-radius: 1.5vw;
+}
+.container-day__figure-big,
+.container-night__figure-big,
+.container-cloudiness__figure-big {
+  width: 12vw;
+  height: 12vw;
+  margin: 3vw auto;
+  border-radius: 50%;
+}
+.container-day__figure-small,
+.container-night__figure-small,
+.container-cloudiness__figure-small {
+  width: 3vw;
+  height: 3vw;
+  border-radius: 50%;
+}
+.container-day__temperature-curent,
+.container-night__temperature-curent,
+.container-cloudiness__temperature-curent {
+  display: block;
+  text-align: center;
+  margin-top: 2vw;
+  font-size: 3rem;
+  font-weight: bolder;
+  color: var(--color-variable-navigation);
+}
+.container-day__city-curent,
+.container-night__city-curent,
+.container-cloudiness__city-curent {
+  display: block;
+  text-align: center;
+  margin-top: 1vw;
+  font-size: 1.5vw;
+  font-weight: 500;
+  color: var(--color-paremetr-city);
+}
+.container-day__parametrs,
+.container-night__parametrs,
+.container-cloudiness__parametrs {
+  display: flex;
+  margin-top: 6vw;
+  justify-content: space-around;
+  color: var(--color-paremetr-city);
+  font-size: 1vw;
+}
+.container-day__value-measurement, .container-day__curent-time-of-day,
+.container-night__value-measurement,
+.container-night__curent-time-of-day,
+.container-cloudiness__value-measurement,
+.container-cloudiness__curent-time-of-day {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 1vw 0;
+  color: var(--color-variable-navigation);
+  font-size: 2rem;
+}
+.container-day__units-measurement,
+.container-night__units-measurement,
+.container-cloudiness__units-measurement {
+  font-size: 1rem;
+}
+.container-day__button,
+.container-night__button,
+.container-cloudiness__button {
+  display: block;
+  margin: auto;
+  border: none;
+  margin: 1vw auto;
+}
+
+.container-day_color-btn-day {
+  background-color: var(--bg-container-day);
+  color: var(--color-paremetr-city);
+  font-size: 1rem;
+}
+
+.container-night_color-btn-night {
+  background-color: var(--bg-container-night);
+  color: var(--color-paremetr-city);
+  font-size: 1rem;
+}
+.container-night__satellite {
+  position: absolute;
+  width: 3vw;
+  height: 3vw;
+  border-radius: 50%;
+  background: linear-gradient(to right, var(--moon-color-light), var(--moon-color-dark));
+  animation: move;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.container-cloudiness__big-section {
+  position: relative;
+}
+.container-cloudiness_color-btn-cloudiness {
+  background-color: var(--bg-container-cloudiness);
+  color: var(--color-paremetr-city);
+  font-size: 1rem;
+}
+
+#cloud {
+  position: absolute;
+  top: -15vw;
+  right: -12vw;
+  opacity: 0.7;
+  background: rgb(255, 255, 255);
+  width: 10vw;
+  height: 4vw;
+  border-radius: 3vw;
+  box-shadow: 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+#cloud:after {
+  content: "";
+  background: rgb(235, 255, 255);
+  position: absolute;
+  width: 3vw;
+  height: 3vw;
+  border-radius: 50%;
+  top: -1vw;
+  left: 1vw;
+}
+
+#cloud:before {
+  content: "";
+  background: rgb(255, 255, 255);
+  position: absolute;
+  width: 5vw;
+  height: 5vw;
+  border-radius: 50%;
+  top: -2.5vw;
+  right: 3vw;
+}
+
+.center {
+  position: absolute;
+}
+
+@media screen and (max-width: 1000px) {
+  .container-global__container-day, .container-global__container-night, .container-global__container-cloudiness {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 700px) {
+  body {
+    display: flex;
+    height: -moz-fit-content;
+    height: fit-content;
+    flex-direction: column;
+  }
+  .container-global {
+    flex-direction: column;
+  }
+}
+@keyframes shine {
+  from {
+    box-shadow: 0px 0px 10px -5px var(--sun-color-second);
+  }
+  to {
+    box-shadow: 0px 0px 20px 10px var(--sun-color-second);
+  }
+}
+@keyframes move {
+  0% {
+    transform: rotate(0deg);
+    left: -0.5vw;
+    top: 9.5vw;
+  }
+  40% {
+    transform: rotate(0deg);
+    left: 10vw;
+    top: 0vw;
+  }
+  50% {
+    transform: rotate(-180deg);
+    opacity: 0;
+    left: 10vw;
+    top: 0vw;
+  }
+  90% {
+    transform: rotate(180deg);
+    opacity: 0;
+    left: -0.5vw;
+    top: 9.5vw;
+  }
+  100% {
+    transform: rotate(0deg);
+    opacity: 1;
+    left: -0.5vw;
+    top: 9.5vw;
+  }
+}/*# sourceMappingURL=style.css.map */

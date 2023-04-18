@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather_Adaptive + Responsive.</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
+      integrity="sha256-WAgYcAck1C1/zEl5sBl5cfyhxtLgKGdpI3oKyJffVRI="
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <container class="container-global">
+      <container class="container-global__container-day">
+        <!-- Container_big_day -->
+        <section class="container-day__big-section container-global_color-day">
+          <section class="container-day__curent-time-of-day">
+            <div>Day</div>
+            <div>...</div>
+            <i class="container-day__fa-sharp fa-solid fa-list"></i>
+          </section>
+
+          <div
+            class="container-day__figure-big container-global_color-sun container-global__shine"
+          ></div>
+          <span class="container-day__temperature-curent">32cº</span>
+          <span class="container-day__city-curent">Monterey</span>
+
+          <section class="container-day__parametrs">
+            <div>Wind now</div>
+            <div>Humidity</div>
+            <div>Precipitation</div>
+          </section>
+
+          <section class="container-day__value-measurement">
+            <div>
+              15<span class="container-day__units-measurement">km</span>
+            </div>
+            <div>32<span class="container-day__units-measurement">%</span></div>
+            <div>87<span class="container-day__units-measurement">%</span></div>
+          </section>
+        </section>
+
+        <!-- Container_small_day -->
+        <div class="container-day__small-section container-global_color-day">
+          <section class="container-day__curent-time-of-day">
+            <div>Day</div>
+            <div>...</div>
+            <div
+              class="container-day__figure-small container-global_color-sun"
+            ></div>
+          </section>
+
+          <span class="container-day__temperature-curent">32º</span>
+          <button
+            class="container-day__button container-day_color-btn-day"
+            type="submit"
+            id="html"
+          >
+            Swipe to see details!
+          </button>
+        </div>
+      </container>
+
+      <container class="container-global__container-night">
+        <!-- Container_big_night -->
+        <section
+          class="container-night__big-section container-global_color-night"
+        >
+          <section class="container-night__curent-time-of-day">
+            <div>Night</div>
+            <div>...</div>
+            <i class="container-day__fa-sharp fa-solid fa-list"></i>
+          </section>
+
+          <div class="container-night__figure-big container-global_color-moon">
+            <div class="container-night__satellite"></div>
+          </div>
+          <span class="container-night__temperature-curent">18cº</span>
+          <span class="container-night__city-curent">Monterey</span>
+
+          <section class="container-night__parametrs">
+            <div>Wind now</div>
+            <div>Humidity</div>
+            <div>Precipitation</div>
+          </section>
+
+          <section class="container-night__value-measurement">
+            <div>
+              20<span class="container-night__units-measurement">km</span>
+            </div>
+            <div>
+              12<span class="container-night__units-measurement">%</span>
+            </div>
+            <div>
+              24<span class="container-night__units-measurement">%</span>
+            </div>
+          </section>
+        </section>
+
+        <!-- Container_small_night -->
+        <section
+          class="container-night__small-section container-global_color-night"
+        >
+          <section class="container-night__curent-time-of-day">
+            <div>Night</div>
+            <div>...</div>
+            <div
+              class="container-night__figure-small container-global_color-moon"
+            ></div>
+          </section>
+
+          <span class="container-night__temperature-curent">18º</span>
+          <button
+            class="container-night__button container-night_color-btn-night"
+            type="submit"
+            id="html"
+          >
+            Swipe to see details!
+          </button>
+        </section>
+      </container>
+
+      <container class="container-global__container-cloudiness">
+        <!-- Container_big_cloudiness -->
+        <section
+          class="container-cloudiness__big-section container-global_color-cloudiness"
+        >
+          <section class="container-cloudiness__curent-time-of-day">
+            <div>Day</div>
+            <div>...</div>
+            <i class="container-cloudiness__fa-sharp fa-solid fa-list"></i>
+          </section>
+
+          <div
+            class="container-cloudiness__figure-big container-global_color-sun"
+          ></div>
+          <div class="center">
+            <div class id="cloud"></div>
+          </div>
+          <span class="container-cloudiness__temperature-curent">18cº</span>
+          <span class="container-cloudiness__city-curent">Monterey</span>
+
+          <section class="container-cloudiness__parametrs">
+            <div>Wind now</div>
+            <div>Humidity</div>
+            <div>Precipitation</div>
+          </section>
+
+          <section class="container-cloudiness__value-measurement">
+            <div>
+              20<span class="container-cloudiness__units-measurement">km</span>
+            </div>
+            <div>
+              12<span class="container-cloudiness__units-measurement">%</span>
+            </div>
+            <div>
+              24<span class="container-cloudiness__units-measurement">%</span>
+            </div>
+          </section>
+        </section>
+
+        <!-- Container_small_cloudiness -->
+        <section
+          class="container-cloudiness__small-section container-global_color-cloudiness"
+        >
+          <section class="container-cloudiness__curent-time-of-day">
+            <div>Night</div>
+            <div>...</div>
+            <div
+              class="container-cloudiness__figure-small container-global_color-sun-cloudiness"
+            ></div>
+          </section>
+
+          <span class="container-cloudiness__temperature-curent">18º</span>
+          <button
+            class="container-cloudiness__button container-cloudiness_color-btn-cloudiness"
+            type="submit"
+            id="html"
+          >
+            Swipe to see details!
+          </button>
+        </section>
+      </container>
+    </container>
+  </body>
+</html>
