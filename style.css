@@ -16,10 +16,18 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 1.0416666667vw;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+}
+
 .container-global {
   flex-wrap: wrap;
-  height: -moz-fit-content;
-  height: fit-content;
+  max-width: 98%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -36,6 +44,7 @@
 }
 .container-global_color-cloudiness {
   background-color: var(--bg-container-cloudiness);
+  box-shadow: 1vw -1vw 3vw -1vw var(--color-shadow);
 }
 .container-global__container-day, .container-global__container-night, .container-global__container-cloudiness {
   margin-top: 2vw;
@@ -61,8 +70,6 @@
 .container-night__big-section,
 .container-cloudiness__big-section {
   width: 22vw;
-  min-width: -moz-fit-content;
-  min-width: fit-content;
   border-radius: 1.5vw;
 }
 .container-day__small-section,
@@ -104,7 +111,7 @@
   display: block;
   text-align: center;
   margin-top: 1vw;
-  font-size: 1.5vw;
+  font-size: 2rem;
   font-weight: 500;
   color: var(--color-paremetr-city);
 }
@@ -115,7 +122,7 @@
   margin-top: 6vw;
   justify-content: space-around;
   color: var(--color-paremetr-city);
-  font-size: 1vw;
+  font-size: 1.3rem;
 }
 .container-day__value-measurement, .container-day__curent-time-of-day,
 .container-night__value-measurement,
@@ -132,27 +139,29 @@
 .container-day__units-measurement,
 .container-night__units-measurement,
 .container-cloudiness__units-measurement {
-  font-size: 1rem;
+  font-size: 1.3rem;
 }
 .container-day__button,
 .container-night__button,
 .container-cloudiness__button {
   display: block;
-  margin: auto;
   border: none;
   margin: 1vw auto;
+}
+.container-day__button-text,
+.container-night__button-text,
+.container-cloudiness__button-text {
+  font-size: 1.3rem;
 }
 
 .container-day_color-btn-day {
   background-color: var(--bg-container-day);
   color: var(--color-paremetr-city);
-  font-size: 1rem;
 }
 
 .container-night_color-btn-night {
   background-color: var(--bg-container-night);
   color: var(--color-paremetr-city);
-  font-size: 1rem;
 }
 .container-night__satellite {
   position: absolute;
@@ -172,7 +181,6 @@
 .container-cloudiness_color-btn-cloudiness {
   background-color: var(--bg-container-cloudiness);
   color: var(--color-paremetr-city);
-  font-size: 1rem;
 }
 
 #cloud {
@@ -213,22 +221,6 @@
   position: absolute;
 }
 
-@media screen and (max-width: 1000px) {
-  .container-global__container-day, .container-global__container-night, .container-global__container-cloudiness {
-    flex-direction: column;
-  }
-}
-@media screen and (max-width: 700px) {
-  body {
-    display: flex;
-    height: -moz-fit-content;
-    height: fit-content;
-    flex-direction: column;
-  }
-  .container-global {
-    flex-direction: column;
-  }
-}
 @keyframes shine {
   from {
     box-shadow: 0px 0px 10px -5px var(--sun-color-second);
@@ -265,5 +257,106 @@
     opacity: 1;
     left: -0.5vw;
     top: 9.5vw;
+  }
+}
+@media screen and (max-width: 1366px) {
+  body {
+    background-color: var(--background-color);
+  }
+  .container-global {
+    max-width: 100%;
+    align-items: flex-start;
+    height: 100vh;
+  }
+  .container-global__container-day, .container-global__container-night, .container-global__container-cloudiness {
+    flex-direction: column;
+  }
+  .container-day__big-section, .container-day__small-section,
+  .container-night__big-section,
+  .container-night__small-section,
+  .container-cloudiness__big-section,
+  .container-cloudiness__small-section {
+    min-width: 30vw;
+  }
+  .container-day__figure-big,
+  .container-night__figure-big,
+  .container-cloudiness__figure-big {
+    width: 13vw;
+    height: 13vw;
+    margin: 4vw auto;
+  }
+  .container-day__parametrs,
+  .container-night__parametrs,
+  .container-cloudiness__parametrs {
+    margin-top: 10vw;
+  }
+  .container-day__temperature-curent,
+  .container-night__temperature-curent,
+  .container-cloudiness__temperature-curent {
+    margin-top: 3vw;
+  }
+  #cloud {
+    top: -18vw;
+  }
+}
+@media screen and (max-width: 512px) {
+  html {
+    font-size: 3.6458333333vw;
+  }
+  body {
+    background-color: var(--background-color);
+  }
+  .container-global {
+    display: flex;
+    height: -moz-fit-content;
+    height: fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    flex-direction: column;
+    align-items: center;
+  }
+  .container-day__big-section, .container-day__small-section,
+  .container-night__big-section,
+  .container-night__small-section,
+  .container-cloudiness__big-section,
+  .container-cloudiness__small-section {
+    min-width: 90vw;
+    border-radius: 5vw;
+    margin-top: 5vw;
+  }
+  .container-day__figure-big,
+  .container-night__figure-big,
+  .container-cloudiness__figure-big {
+    width: 50vw;
+    height: 50vw;
+    margin: 10vw auto;
+  }
+  .container-day__parametrs,
+  .container-night__parametrs,
+  .container-cloudiness__parametrs {
+    margin-top: 40vw;
+  }
+  .container-day__temperature-curent,
+  .container-night__temperature-curent,
+  .container-cloudiness__temperature-curent {
+    margin-top: 5vw;
+  }
+  .container-day__button,
+  .container-night__button,
+  .container-cloudiness__button {
+    margin: 7vw auto;
+  }
+  .container-day__curent-time-of-day,
+  .container-night__curent-time-of-day,
+  .container-cloudiness__curent-time-of-day {
+    margin: 5vw auto;
+  }
+  .container-day__value-measurement,
+  .container-night__value-measurement,
+  .container-cloudiness__value-measurement {
+    margin: 5vw auto;
+  }
+  #cloud {
+    top: -18v;
   }
 }/*# sourceMappingURL=style.css.map */
