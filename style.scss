@@ -19,17 +19,16 @@
   box-sizing: border-box;
 }
 html {
-  font-size: calc(100vw / 1920 * 20);
+  font-size: calc(100vw / 1920 * 10);
 }
 body {
   display: flex;
   justify-content: center;
 }
-// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 .container-global {
   flex-wrap: wrap;
-  // width: 100vw;
   max-width: 98%;
+  // width: 100vw;
   // width: fit-content;
   // height: 100vh;
   display: flex;
@@ -88,15 +87,12 @@ body {
   &__big-section {
     width: 22vw;
     // min-width: fit-content;
-    // ??????????????????????????????????????????????????????????????????????
-    // height: 40vw;
+    // ?????
     border-radius: 1.5vw;
   }
   &__small-section {
     width: 22vw;
     height: max-content;
-    // ??????????????????????????????
-    // height: 12vw;
     border-radius: 1.5vw;
   }
   &__figure-big {
@@ -115,7 +111,7 @@ body {
     display: block;
     text-align: center;
     margin-top: 2vw;
-    font-size: 3rem;
+    font-size: 6rem;
     font-weight: bolder;
     color: var(--color-variable-navigation);
   }
@@ -123,7 +119,7 @@ body {
     display: block;
     text-align: center;
     margin-top: 1vw;
-    font-size: 2rem;
+    font-size: 4rem;
     font-weight: 500;
     color: var(--color-paremetr-city);
   }
@@ -132,8 +128,7 @@ body {
     margin-top: 6vw;
     justify-content: space-around;
     color: var(--color-paremetr-city);
-    font-size: 1.3rem;
-    // При большем font-size parametrs не вмещаются!
+    font-size: 2.5rem;
   }
   &__value-measurement,
   &__curent-time-of-day {
@@ -142,11 +137,10 @@ body {
     align-items: center;
     margin: 1vw 0;
     color: var(--color-variable-navigation);
-    font-size: 2rem;
-    // ???????????????????????????
+    font-size: 4rem;
   }
   &__units-measurement {
-    font-size: 1.3rem;
+    font-size: 2.5rem;
   }
   &__button {
     display: block;
@@ -154,7 +148,7 @@ body {
     margin: 1vw auto;
   }
   &__button-text {
-    font-size: 1.3rem;
+    font-size: 2.5rem;
   }
 }
 .container-day {
@@ -210,7 +204,6 @@ body {
 
 #cloud:after {
   content: '';
-  // opacity: 0.7;
   background: rgba(235, 255, 255);
   position: absolute;
   width: 3vw;
@@ -221,7 +214,6 @@ body {
 }
 #cloud:before {
   content: '';
-  // opacity: 0.7;
   background: rgba(255, 255, 255);
   position: absolute;
   width: 5vw;
@@ -275,6 +267,9 @@ body {
 }
 // For tablet iPad_Pro.
 @media screen and (max-width: 1366px) {
+  html {
+    font-size: calc(100vw / 1366 * 10);
+  }
   body {
     background-color: var(--background-color);
   }
@@ -302,7 +297,6 @@ body {
     }
     &__parametrs {
       margin-top: 10vw;
-      // font-size: 1.3rem;
     }
     &__temperature-curent {
       margin-top: 3vw;
@@ -316,7 +310,7 @@ body {
 // For iFone 12_pro
 @media screen and (max-width: 512px) {
   html {
-    font-size: calc(100vw / 1920 * 70);
+    font-size: calc(100vw / 390 * 10);
   }
   body {
     background-color: var(--background-color);
@@ -341,6 +335,10 @@ body {
       width: 50vw;
       height: 50vw;
       margin: 10vw auto;
+    }
+    &__figure-small {
+      width: 15vw;
+      height: 15vw;
     }
     &__parametrs {
       margin-top: 40vw;

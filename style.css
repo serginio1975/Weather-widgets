@@ -17,7 +17,7 @@
 }
 
 html {
-  font-size: 1.0416666667vw;
+  font-size: 0.5208333333vw;
 }
 
 body {
@@ -101,7 +101,7 @@ body {
   display: block;
   text-align: center;
   margin-top: 2vw;
-  font-size: 3rem;
+  font-size: 6rem;
   font-weight: bolder;
   color: var(--color-variable-navigation);
 }
@@ -111,7 +111,7 @@ body {
   display: block;
   text-align: center;
   margin-top: 1vw;
-  font-size: 2rem;
+  font-size: 4rem;
   font-weight: 500;
   color: var(--color-paremetr-city);
 }
@@ -122,7 +122,7 @@ body {
   margin-top: 6vw;
   justify-content: space-around;
   color: var(--color-paremetr-city);
-  font-size: 1.3rem;
+  font-size: 2.5rem;
 }
 .container-day__value-measurement, .container-day__curent-time-of-day,
 .container-night__value-measurement,
@@ -134,12 +134,12 @@ body {
   align-items: center;
   margin: 1vw 0;
   color: var(--color-variable-navigation);
-  font-size: 2rem;
+  font-size: 4rem;
 }
 .container-day__units-measurement,
 .container-night__units-measurement,
 .container-cloudiness__units-measurement {
-  font-size: 1.3rem;
+  font-size: 2.5rem;
 }
 .container-day__button,
 .container-night__button,
@@ -151,7 +151,7 @@ body {
 .container-day__button-text,
 .container-night__button-text,
 .container-cloudiness__button-text {
-  font-size: 1.3rem;
+  font-size: 2.5rem;
 }
 
 .container-day_color-btn-day {
@@ -260,6 +260,9 @@ body {
   }
 }
 @media screen and (max-width: 1366px) {
+  html {
+    font-size: 0.7320644217vw;
+  }
   body {
     background-color: var(--background-color);
   }
@@ -301,7 +304,7 @@ body {
 }
 @media screen and (max-width: 512px) {
   html {
-    font-size: 3.6458333333vw;
+    font-size: 2.5641025641vw;
   }
   body {
     background-color: var(--background-color);
@@ -330,6 +333,12 @@ body {
     width: 50vw;
     height: 50vw;
     margin: 10vw auto;
+  }
+  .container-day__figure-small,
+  .container-night__figure-small,
+  .container-cloudiness__figure-small {
+    width: 15vw;
+    height: 15vw;
   }
   .container-day__parametrs,
   .container-night__parametrs,
